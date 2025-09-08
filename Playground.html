@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragon Mind</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Left panel */
+    .left-panel {
+      width: 550px;
+      background: linear-gradient(135deg, #bbd6f4, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 2px 0 15px rgba(0,0,0,0.2);
+      position: relative;
+      padding: 40px 40px 120px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      border-radius: 0 20px 20px 0;
+    }
+
+    /* Main logo */
+    .left-panel .main-logo {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .left-panel .main-logo:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Styled descriptive text */
+    .left-panel .title-text {
+      color: #095169;
+      font-size: 20px;
+      line-height: 1.8;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .left-panel .title-text:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    /* Dragon logo with pop animation */
+    .left-panel .dragon-logo {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .left-panel .dragon-logo:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Bottom-left logo */
+    .bottom-left {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .bottom-left img {
+      width: 180px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0.95;
+    }
+
+    .bottom-left img:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    /* Bottom-right logo */
+    .bottom-right {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .bottom-right img {
+      width: 100px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0.95;
+    }
+
+    .bottom-right img:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    /* Right panel (iframe) */
+    .right-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-panel">
+    <!-- Main logo -->
+    <img src="logo-bot.png" alt="Main Logo" class="main-logo">
+
+    <!-- Optional descriptive text -->
+    <div class="title-text">
+      Welcome to Healthcare Agent! Explore insights and interact with our Health Bot.
+    </div>
+
+    <!-- Bottom-left Microsoft logo -->
+    <div class="bottom-right">
+      <img src="microsoft.png" alt="Microsoft Logo">
+    </div>
+
+    <!-- Bottom-right play logo -->
+    <div class="bottom-left">
+      <img src="logo-play.png" alt="Play Logo">
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <iframe src="https://healthcare-bot-xmpwoiqgc6yv6.azurewebsites.net/" id="health-bot-iframe"></iframe>
+  </div>
+</body>
+</html>
